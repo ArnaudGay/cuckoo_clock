@@ -1,8 +1,12 @@
+:root{
+    --duration: 60s;
+}
+
 body
 {
     background-image:url(wallpaper.png);
-
 }
+
 .clock {
     position:absolute;
     width: 150px;
@@ -25,7 +29,7 @@ body
     top: 50%;
     left: calc(50% - 2px);
     border-radius: 50px;
-    animation: spin 6s linear infinite;
+    animation: spin calc(var(--duration)/10) linear infinite;
     transform-origin: top;
 }
 
@@ -38,7 +42,7 @@ body
     top: 50%;
     left: calc(50% - 2px);
     border-radius: 50px;
-    animation: spin 60s linear infinite;
+    animation: spin var(--duration) linear infinite;
     transform-origin: top;
 }
 
@@ -49,7 +53,7 @@ body
     height: 14px;
     border-radius: 50%;
     background: #ac4d00;
-    z-index : 1;
+    z-index : 2;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
@@ -66,6 +70,15 @@ body
     z-index:2;
     transform:translate(-50%, -50%);
     box-shadow: 60px 60px 0 0 black, -60px 60px 0 0 black, 0 120px 0 0 black;
+}
+
+@keyframes spin{
+    0% {
+        transform: rotate(-180deg)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
 }
 
 .wire1{
@@ -108,7 +121,71 @@ body
     left: -12px;
 }
 
-.form {
+.door_background {
+    background-color: black;
+    border-radius: 8%;
+    height: 100px;
+    width: 100px;
+    perspective: 700px;
+    perspective-origin: center;
+    position: absolute;
+    right: -50px;
+    top: 90px;
+}
+
+.door_right {
+    background-color: #C5A48A;
+    content: "";
+    border-radius: 5%;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    animation: door_right 6s linear infinite;
+    transform: translateZ(0);
+    transform-origin: 100% 100%;
+    width: 50px;
+}
+
+.door_left {
+    background-color: #C5A48A;
+    border-radius: 5%;
+    content: "";
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    animation: door_left 6s linear infinite;
+    transform: translateZ(0);
+    transform-origin: 0% 0%;
+    width: 50px;
+}
+
+@keyframes door_right {
+    0% {
+        transform: translateZ(0) rotateY(0deg);
+    }
+    35% {
+        transform: translateZ(0) rotateY(90deg);
+    }
+    40% {
+        transform: translateZ(0) rotateY(0deg);
+    }
+}
+
+@keyframes door_left {
+    0%{
+        transform :translateZ(0) rotateY(0deg);
+    }
+    35% {
+        transform : translateZ(0) rotateY(-90deg);
+    }
+    40% {
+        transform : translateZ(0) rotateY(0deg);
+    }
+}
+
+.carre {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -119,4 +196,25 @@ body
     border-bottom: solid 8px #6B360F;
     border-left: solid 8px #6B360F;
     border-right: solid 8px #6B360F;
+    z-index: -1;
+}
+
+.triangle {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+    border-bottom: 175px solid #d2691e;
+}
+
+.roof {
+    position: absolute;
+    left: 50%;
+    top: 19%;
+    transform: translate(-50%, -50%);
+    border-left: 170px solid transparent;
+    border-right: 170px solid transparent;
+    border-bottom: 200px solid #6B360F;
 }
