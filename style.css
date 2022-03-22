@@ -86,23 +86,18 @@ body
     background-color: black;
     border-radius: 8%;
     height: 100px;
-    margin: 3em auto 1em;
+    width: 100px;
     perspective: 700px;
     perspective-origin: center;
-    position: relative;
-    /* context for pseudo elements */
-
-    text-align: center;
-    width: 100px;
+    position: absolute;
+    right: -50px;
+    top: 90px;
     }
-    /**
-    *   door
-    */
 
 .door_right {
     background-color: #C5A48A;
-    border-radius: 5%;
     content: "";
+    border-radius: 5%;
     height: 100px;
     position: absolute;
     left: 50%;
@@ -166,7 +161,7 @@ body
 .triangle {
     position: absolute;
     left: 50%;
-    top: 17%;
+    top: 20%;
     transform: translate(-50%, -50%);
     border-left: 145px solid transparent;
     border-right: 145px solid transparent;
@@ -176,7 +171,7 @@ body
 .roof {
     position: absolute;
     left: 50%;
-    top: 16%;
+    top: 19%;
     transform: translate(-50%, -50%);
     border-left: 170px solid transparent;
     border-right: 170px solid transparent;
