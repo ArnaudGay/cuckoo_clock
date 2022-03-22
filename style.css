@@ -8,7 +8,7 @@ body
     width: 150px;
     height: 150px;
     border: 11px solid #ac4d00;
-    border-radius: 50%;
+    border-radius: 100px;
     left: 50%;
     top: 50%;
     background: #fefbf2;
@@ -23,7 +23,7 @@ body
     width: 5px;
     background: black;
     top: 50%;
-    left: 50%;
+    left: calc(50% - 2px);
     border-radius: 50px;
     animation: spin 6s linear infinite;
     transform-origin: top;
@@ -36,7 +36,7 @@ body
     width: 5px;
     background: black;
     top: 50%;
-    left: 50%;
+    left: calc(50% - 2px);
     border-radius: 50px;
     animation: spin 60s linear infinite;
     transform-origin: top;
@@ -61,23 +61,54 @@ body
     width: 8px;
     height: 2px;
     background: black;
-    left: calc(50%);
+    left: 50%;
     top : 10%;
     z-index:2;
     transform:translate(-50%, -50%);
     box-shadow: 60px 60px 0 0 black, -60px 60px 0 0 black, 0 120px 0 0 black;
 }
 
-@keyframes spin{
-    0% {
-        transform: rotate(-180deg)
-    }
-    100% {
-        transform: rotate(180deg)
-    }
+.wire1{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 80px;
+    background: black;
+    top: 160px;
+    left: 40px;
 }
 
-.forme {
+.weight1{
+    background: black;
+    height: 100px;
+    width: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top : 79px;
+    left: -15px;
+}
+
+.wire2{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 90px;
+    background: black;
+    top: 160px;
+    left: 110px;
+}
+
+.weight2{
+    background: black;
+    height: 70px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top : 79px;
+    left: -12px;
+}
+
+.form {
     position: absolute;
     left: 50%;
     top: 50%;
