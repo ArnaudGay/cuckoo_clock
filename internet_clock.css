@@ -1,76 +1,70 @@
-.clock {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border: 20px solid #b06a26;
-    border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    background: #fefbf2;
-    transform: translate(-50%, -50%);
-    box-shadow: inset 0px 0px 10px black;
-}
 
-.clock::before {
-    position: absolute;
-    content: '';
-    height: 130px;
-    width: 10px;
-    background: black;
-    top: 50%;
-    left: calc(50% - 5px);
-    border-radius: 5px;
-    animation: spin 8s linear infinite;
-    transform-origin: top;
-}
 
-.clock::after {
-    position: absolute;
-    content: '';
+.door_background {
+    background-color: black;
+    border-radius: 8%;
     height: 100px;
-    width: 10px;
-    background: black;
-    top: 50%;
-    left: calc(50% - 5px);
-    border-radius: 5px;
-    animation: spin 80s linear infinite;
-    transform-origin: top;
-    
-}
+    margin: 3em auto 1em;
+    perspective: 700px;
+    perspective-origin: center;
+    position: relative;
+    /* context for pseudo elements */
 
-@keyframes spin {
+    text-align: center;
+    width: 100px;
+    }
+    /**
+    *   door
+    */
+
+.door_right {
+    background-color: #C5A48A;
+    border-radius: 5%;
+    content: "";
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    animation: door_right 6s linear infinite;
+    transform: translateZ(0);
+    transform-origin: 100% 100%;
+    width: 50px;
+    }
+
+.door_left {
+    background-color: #C5A48A;
+    border-radius: 5%;
+    content: "";
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    animation: door_left 6s linear infinite;
+    transform: translateZ(0);
+    transform-origin: 0% 0%;
+    width: 50px;
+    }
+
+@keyframes door_right {
     0% {
-        transform: rotate(-180deg)
+        transform: translateZ(0) rotateY(0deg);
     }
-    100% {
-        transform: rotate(180deg)
+    35% {
+        transform: translateZ(0) rotateY(90deg);
+    }
+    40% {
+        transform: translateZ(0) rotateY(0deg);
     }
 }
 
-body::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #b06a26;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-
-}
-
-body::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: black;
-    left: 50%;
-    top: calc(50% - 145px);
-    z-index: 2;
-    transform: translateX(-50%);
-    box-shadow: 140px 145px 0 0 black, -140px 145px 0 0 black, 0 280px 0 0 black;
+@keyframes door_left {
+    0%{
+        transform :translateZ(0) rotateY(0deg);
+    }
+    35% {
+        transform : translateZ(0) rotateY(-90deg);
+    }
+    40% {
+        transform : translateZ(0) rotateY(0deg);
+    }
 }

@@ -76,3 +76,72 @@ body
         transform: rotate(180deg)
     }
 }
+
+.door_background {
+    background-color: black;
+    border-radius: 8%;
+    height: 100px;
+    margin: 3em auto 1em;
+    perspective: 700px;
+    perspective-origin: center;
+    position: relative;
+    /* context for pseudo elements */
+
+    text-align: center;
+    width: 100px;
+    }
+    /**
+    *   door
+    */
+
+.door_right {
+    background-color: #C5A48A;
+    border-radius: 5%;
+    content: "";
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    animation: door_right 6s linear infinite;
+    transform: translateZ(0);
+    transform-origin: 100% 100%;
+    width: 50px;
+    }
+
+.door_left {
+    background-color: #C5A48A;
+    border-radius: 5%;
+    content: "";
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    animation: door_left 6s linear infinite;
+    transform: translateZ(0);
+    transform-origin: 0% 0%;
+    width: 50px;
+    }
+
+@keyframes door_right {
+    0% {
+        transform: translateZ(0) rotateY(0deg);
+    }
+    35% {
+        transform: translateZ(0) rotateY(90deg);
+    }
+    40% {
+        transform: translateZ(0) rotateY(0deg);
+    }
+}
+
+@keyframes door_left {
+    0%{
+        transform :translateZ(0) rotateY(0deg);
+    }
+    35% {
+        transform : translateZ(0) rotateY(-90deg);
+    }
+    40% {
+        transform : translateZ(0) rotateY(0deg);
+    }
+}
