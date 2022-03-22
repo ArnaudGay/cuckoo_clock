@@ -1,4 +1,78 @@
 body
 {
     background-image:url(wallpaper.png);
+
+}
+.clock {
+    position:absolute;
+    width: 200px;
+    height: 200px;
+    border: 11px solid #ac4d00;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    background: #fefbf2;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0px 0px 15px black;
+}
+
+.clock::before {
+    position: absolute;
+    content: '';
+    height: 65px;
+    width: 6px;
+    background: black;
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 50px;
+    animation: spin 6s linear infinite;
+    transform-origin: top;
+}
+
+.clock::after {
+    position: absolute;
+    content: '';
+    height: 45px;
+    width: 6px;
+    background: black;
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 50px;
+    animation: spin 60s linear infinite;
+    transform-origin: top;
+}
+
+.clock_container::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ac4d00;
+    z-index : 1;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.clock_container::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: black;
+    left: calc(50%);
+    top : calc(0% + 20px);
+    z-index:2;
+    transform:translate(-50%, -50%);
+    box-shadow: 80px 80px 0 0 black, -80px 80px 0 0 black, 0 160px 0 0 black;
+}
+
+@keyframes spin{
+    0% {
+        transform: rotate(-180deg)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
 }
