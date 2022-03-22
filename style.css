@@ -77,7 +77,7 @@ body
     }
 }
 
-.forme {
+.carre {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -88,4 +88,24 @@ body
     border-bottom: solid 8px #6B360F;
     border-left: solid 8px #6B360F;
     border-right: solid 8px #6B360F;
+}
+
+.triangle {
+    position: absolute;
+    left: 50%;
+    top: 17%;
+    transform: translate(-50%, -50%);
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+    border-bottom: 175px solid #d2691e;
+}
+
+.roof {
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    transform: translate(-50%, -50%);
+    border-left: 170px solid transparent;
+    border-right: 170px solid transparent;
+    border-bottom: 200px solid #6B360F;
 }
