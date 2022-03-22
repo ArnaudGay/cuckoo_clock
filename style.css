@@ -1,3 +1,7 @@
+:root{
+    --duration: 60s;
+}
+
 body
 {
     background-image:url(wallpaper.png);
@@ -16,6 +20,7 @@ body
     box-shadow: inset 0px 0px 15px black;
 }
 
+
 .clock::before {
     position: absolute;
     content: '';
@@ -25,7 +30,7 @@ body
     top: 50%;
     left: 50%;
     border-radius: 50px;
-    animation: spin 6s linear infinite;
+    animation: spin calc(var(--duration)/10) linear infinite;
     transform-origin: top;
 }
 
@@ -38,7 +43,7 @@ body
     top: 50%;
     left: 50%;
     border-radius: 50px;
-    animation: spin 60s linear infinite;
+    animation: spin var(--duration) linear infinite;
     transform-origin: top;
 }
 
