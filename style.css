@@ -130,7 +130,7 @@ body
     perspective-origin: center;
     position: absolute;
     right: -50px;
-    top: 90px;
+    top: 65px;
 }
 
 .bird{
@@ -210,21 +210,23 @@ body
 .triangle {
     position: absolute;
     left: 50%;
-    top: 5%;
+    top: 17%;
     transform: translate(-50%, -50%);
     border-left: 145px solid transparent;
     border-right: 145px solid transparent;
     border-bottom: 175px solid #d2691e;
+    z-index: -2;
 }
 
 .roof {
     position: absolute;
     left: 50%;
-    top: 5%;
+    top: 16%;
     transform: translate(-50%, -50%);
     border-left: 170px solid transparent;
     border-right: 170px solid transparent;
     border-bottom: 200px solid #6B360F;
+    z-index: -2;
 }
 
 
