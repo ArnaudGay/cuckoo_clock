@@ -144,6 +144,7 @@ body
     40% {
         transform : translateZ(0) rotateY(0deg);
     }
+}
 .carre {
     position: absolute;
     left: 50%;
