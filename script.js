@@ -1,4 +1,5 @@
-var audio = new Audio("sound_sard.mp3");
-audio.play();
+const audio = new Audio("missjirachi_coucou.mp3");
 
-var time = getTime();
+setInterval(() => {
+    audio.play();
+},7400)
