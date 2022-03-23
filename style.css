@@ -9,7 +9,7 @@ body
 
 /* forme de la pendule */
 
-.roof_dial {
+.roof_coffer {
     transform: translate(-50%, -50%);
     border-left: 145px solid transparent;
     border-right: 145px solid transparent;
