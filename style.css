@@ -1,5 +1,5 @@
 :root{
-    --duration: 6s;
+    --duration: 5s;
 }
 
 body
@@ -176,14 +176,6 @@ body
     top: 65px;
 }
 
-.bird{
-    height: 100px;
-    width: 100px;
-    border-radius: 8%;
-    z-index: 0;
-    animation: bird 6s linear infinite;
-}
-
 .door_right {
     background-color: #C5A48A;
     content: "";
@@ -284,7 +276,7 @@ body
     width: 100px;
     border-radius: 8%;
     transform: translateZ(0);
-    animation: bird1 calc(var(--duration)-1s) linear infinite;
+    animation: bird1 calc(var(--duration) ) linear infinite;
 }
 
 @keyframes bird1{
