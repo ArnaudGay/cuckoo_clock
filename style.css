@@ -1,5 +1,5 @@
 :root{
-    --duration: 5s;
+    --duration: 6s;
 }
 
 body
@@ -41,7 +41,7 @@ body
     top: 50%;
     left: calc(50% - 2px);
     border-radius: 50px;
-    animation: spin calc(var(--duration)*10) linear infinite;
+    animation: spin calc(var(--duration)*60) linear infinite;
     transform-origin: top;
 }
 
@@ -105,7 +105,7 @@ body
     width: 5px;
     height: px;
     background: black;
-    animation: descent1 calc(var(--duration)*20) linear infinite;
+    animation: descent1 calc(var(--duration)*120) linear infinite;
 }
 
 .weight1{
@@ -122,7 +122,7 @@ body
     width: 5px;
     height: 10px;
     background: black;
-    animation: descent2 calc(var(--duration)*20) linear infinite;
+    animation: descent2 calc(var(--duration)*120) linear infinite;
 }
 
 .weight2{
@@ -276,7 +276,7 @@ body
     width: 100px;
     border-radius: 8%;
     transform: translateZ(0);
-    animation: bird1 calc(var(--duration) ) linear infinite;
+    animation: bird1 calc(var(--duration)) linear infinite;
 }
 
 @keyframes bird1{
