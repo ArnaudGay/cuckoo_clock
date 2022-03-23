@@ -1,4 +1,4 @@
-:root{
+:root {
     --duration: 6s;
 }
 
@@ -7,7 +7,41 @@ body
     background-image:url(wallpaper.png);
 }
 
-.clock {
+/* forme de la pendule */
+
+.roof_dial {
+    transform: translate(-50%, -50%);
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+    border-bottom: 175px solid #d2691e;
+    stroke:#6B360F;
+    z-index: -2;
+    position: relative;
+    top: 120px;
+}
+
+.roof {
+    height: 0;
+    width: 0;
+    border-left: 170px solid transparent;
+    border-right: 170px solid transparent;
+    border-bottom: 200px solid #6B360F;
+    z-index: -2;
+}
+
+.coffer {
+    height: 300px;
+    width: 300px;
+    background-color: #d2691e;
+    border-bottom: solid 8px #6B360F;
+    border-left: solid 8px #6B360F;
+    border-right: solid 8px #6B360F;
+    z-index: -1;
+}
+
+/* Cadran de l'horloge */
+
+.dial {
     position: relative;
     width: 150px;
     height: 150px;
@@ -19,7 +53,7 @@ body
     box-shadow: inset 0px 0px 15px black;
 }
 
-.clock::before {
+.dial::before {
     content: '';
     height: 50px;
     width: 5px;
@@ -32,7 +66,7 @@ body
     transform-origin: top;
 }
 
-.clock::after {
+.dial::after {
     content: '';
     height: 30px;
     width: 5px;
@@ -45,7 +79,7 @@ body
     transform-origin: top;
 }
 
-.clock_container::before{
+.dial_container::before {
     content: '';
     width: 14px;
     height: 14px;
@@ -58,7 +92,7 @@ body
     top: 50%;
 }
 
-.clock_container::after{
+.dial_container::after {
     content: '';
     position: absolute;
     top: 10%;
@@ -71,7 +105,7 @@ body
     box-shadow:0 120px 0 0 black;
 }
 
-.tiret_horizontal{
+.decorating_dial {
     content: '';
     position: absolute;
     top: 50%;
@@ -84,23 +118,9 @@ body
     box-shadow: 120px 0 0 0 black;
 }
 
-@keyframes spin{
-    0% {
-        transform: rotate(-180deg)
-    }
-    100% {
-        transform: rotate(180deg)
-    }
-}
+/* Poids de l'horloge */
 
-.pendule{
-    width: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.wire1{
+.wire_left {
     content: '';
     width: 5px;
     height: px;
@@ -108,7 +128,7 @@ body
     animation: descent1 calc(var(--duration)*120) linear infinite;
 }
 
-.weight1{
+.weight_left {
     background: black;
     height: 100px;
     width: 35px;
@@ -117,7 +137,7 @@ body
     top: -1px;
 }
 
-.wire2{
+.wire_right {
     content: '';
     width: 5px;
     height: 10px;
@@ -125,7 +145,7 @@ body
     animation: descent2 calc(var(--duration)*120) linear infinite;
 }
 
-.weight2{
+.weight_right {
     background: black;
     height: 70px;
     width: 30px;
@@ -134,35 +154,7 @@ body
     top: -1px;
 }
 
-@keyframes descent1 {
-    0%{
-        height: 10px;
-    }
-    50%{
-        height : 80px;
-    }
-    99%{
-        height: 150px;
-    }
-    100%{
-        height: 10px;
-    }
-}
-
-@keyframes descent2 {
-    0%{
-        height: 10px;
-    }
-    50%{
-        height : 150px;
-    }
-    99%{
-        height: 150px;
-    }
-    100%{
-        height: 10px;
-    }
-}
+/* Porte du coucou */
 
 .door_background {
     background-color: #000000;
@@ -204,14 +196,106 @@ body
     width: 50px;
 }
 
+/* Le coucou */
+
+.bird {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 8%;
+    transform: translateZ(0);
+    animation: bird calc(var(--duration)) linear infinite;
+}
+
+.wing_bird {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 8%;
+    z-index: 1;
+    transform: translateZ(0);
+    animation: wing_bird calc(var(--duration)) linear infinite;
+    opacity:0 ;
+}
+
+/* Les KeyFrames */
+/* Rotation des aiguilles */
+
+@keyframes spin {
+    0% {
+        transform: rotate(-180deg)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
+}
+
+/* Apparition du coucou */
+
+@keyframes bird {
+    0% {
+        transform: translateZ(0) scaleY(0.5) scaleX(0.5);
+
+    }
+    2%{
+        opacity:100%;
+    }
+    3%{
+        opacity:20%
+    }
+    5% {
+        transform: translateZ(0) scaleY(1.5) scaleX(1.5);
+        opacity: 0;
+    }
+    6%{
+        opacity:20%
+    }
+    7%{
+        opacity:100%
+    }
+    8% {
+        transform: translateZ(0) scaleY(0) scaleX(0);
+    }
+    9% {
+        transform: translateZ(0) scaleY(1) scaleX(1);
+    }
+}
+
+/* Appariton du coucou avec ailes */
+
+@keyframes wing_bird {
+    2% {
+        opacity: 0;
+    }
+    3% {
+        opacity: 50;
+    }
+    4% {
+        transform: translateZ(0) scaleY(2) scaleX(2);
+        opacity: 100;
+    }
+    6% {
+        transform: translateZ(0) scaleY(1) scaleX(1);
+        opacity: 75;
+    }
+    7% {
+        opacity: 50;
+    }
+    8% {
+        opacity: 0;
+    }
+}
+
+/* Ouverture des portes du coucou */
+
 @keyframes door_right {
     0% {
         transform: translateZ(0) rotateY(0deg);
     }
-    35% {
+    5% {
         transform: translateZ(0) rotateY(90deg);
     }
-    40% {
+    10% {
         transform: translateZ(0) rotateY(0deg);
     }
 }
@@ -220,124 +304,72 @@ body
     0%{
         transform :translateZ(0) rotateY(0deg);
     }
-    35% {
+    5% {
         transform : translateZ(0) rotateY(-90deg);
     }
-    40% {
+    10% {
         transform : translateZ(0) rotateY(0deg);
     }
 }
 
-.form {
-    height: 300px;
-    width: 300px;
-    background-color: #d2691e;
-    border-bottom: solid 8px #6B360F;
-    border-left: solid 8px #6B360F;
-    border-right: solid 8px #6B360F;
-    z-index: -1;
+/* Descentes des poids de l'horloge */
+/* Poids de gauche */
+
+@keyframes descent1 {
+    0%{
+        height: 10px;
+    }
+    50%{
+        height : 80px;
+    }
+    99%{
+        height: 150px;
+    }
+    100%{
+        height: 10px;
+    }
 }
 
-.triangle {
-    transform: translate(-50%, -50%);
-    border-left: 145px solid transparent;
-    border-right: 145px solid transparent;
-    border-bottom: 175px solid #d2691e;
-    stroke:#6B360F;
-    z-index: -2;
-    position: relative;
-    top: 120px;
+/* Poids de droite */
+
+@keyframes descent2 {
+    0%{
+        height: 10px;
+    }
+    50%{
+        height : 150px;
+    }
+    99%{
+        height: 150px;
+    }
+    100%{
+        height: 10px;
+    }
 }
 
-.roof {
-    height: 0;
-    width: 0;
-    border-left: 170px solid transparent;
-    border-right: 170px solid transparent;
-    border-bottom: 200px solid #6B360F;
-    z-index: -2;
-}
-.horloge {
+/* Flex */
+/* Flex des poids et de leur fil */
+
+.pendulum{
+    width: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.poids {
+/* Flex des poids par rapport à leur support*/
+
+.weights {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 300px;
 }
 
-.bird{
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    border-radius: 8%;
-    transform: translateZ(0);
-    animation: bird1 calc(var(--duration)) linear infinite;
-}
+/* Flex du carré et du trinagle formant l'horloge */
 
-@keyframes bird1{
-    18% {
-        transform: translateZ(0) scaleY(0.5) scaleX(0.5);
-
-    }
-    22%{
-        opacity:100%;
-    }
-    23%{
-        opacity:20%
-    }
-    25% {
-        transform: translateZ(0) scaleY(1.5) scaleX(1.5);
-        opacity: 0;
-    }
-    26%{
-        opacity:20%
-    }
-    28%{
-        opacity:100%
-    }
-    30% {
-        transform: translateZ(0) scaleY(0) scaleX(0);
-    }
-    32% {
-        transform: translateZ(0) scaleY(1) scaleX(1);
-    }
-}
-
-#coucou{
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    border-radius: 8%;
-    z-index: 1;
-    transform: translateZ(0);
-    animation: bird calc(var(--duration)) linear infinite;
-    opacity:0 ;
-}
-
-@keyframes bird {
-    23% {
-        opacity: 0;
-    }
-    24% {
-        opacity: 50;
-    }
-    25% {
-        transform: translateZ(0) scaleY(2) scaleX(2);
-        opacity: 100;
-    }
-    28% {
-        transform: translateZ(0) scaleY(1) scaleX(1);
-        opacity: 75;
-    }
-    30% {
-        opacity: 50;
-    }
-    31% {
-        opacity: 0;
-    }
+.horloge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
