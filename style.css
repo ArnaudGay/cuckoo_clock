@@ -131,14 +131,7 @@ body
     position: absolute;
     right: -50px;
     top: 65px;
-}
-
-.bird{
-    height: 100px;
-    width: 100px;
-    border-radius: 8%;
-    z-index: 0;
-    animation: bird 6s linear infinite;
+    transform: translateZ(0);
 }
 
 .door_right {
@@ -173,7 +166,7 @@ body
     0% {
         transform: translateZ(0) rotateY(0deg);
     }
-    35% {
+    25% {
         transform: translateZ(0) rotateY(90deg);
     }
     40% {
@@ -185,7 +178,7 @@ body
     0%{
         transform :translateZ(0) rotateY(0deg);
     }
-    35% {
+    25% {
         transform : translateZ(0) rotateY(-90deg);
     }
     40% {
@@ -228,8 +221,3 @@ body
     border-bottom: 200px solid #6B360F;
     z-index: -2;
 }
-
-
-
-
-
