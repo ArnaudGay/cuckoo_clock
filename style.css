@@ -1,5 +1,5 @@
 :root{
-    --duration: 60s;
+    --duration: 6s;
 }
 
 body
@@ -28,7 +28,7 @@ body
     top: 50%;
     left: calc(50% - 2px);
     border-radius: 50px;
-    animation: spin calc(var(--duration)/10) linear infinite;
+    animation: spin var(--duration) linear infinite;
     transform-origin: top;
 }
 
@@ -41,7 +41,7 @@ body
     top: 50%;
     left: calc(50% - 2px);
     border-radius: 50px;
-    animation: spin var(--duration) linear infinite;
+    animation: spin calc(var(--duration)*10) linear infinite;
     transform-origin: top;
 }
 
@@ -90,8 +90,9 @@ body
 .wire1{
     content: '';
     width: 5px;
-    height: 80px;
+    height: px;
     background: black;
+    animation: descent1 calc(var(--duration)*20) linear infinite;
 }
 
 .weight1{
@@ -99,13 +100,16 @@ body
     height: 100px;
     width: 35px;
     border-radius: 50%;
+    position: relative;
+    top: -1px;
 }
 
 .wire2{
     content: '';
     width: 5px;
-    height: 90px;
+    height: 10px;
     background: black;
+    animation: descent2 calc(var(--duration)*20) linear infinite;
 }
 
 .weight2{
@@ -113,6 +117,38 @@ body
     height: 70px;
     width: 30px;
     border-radius: 50%;
+    position: relative;
+    top: -1px;
+}
+
+@keyframes descent1 {
+    0%{
+        height: 10px;
+    }
+    50%{
+        height : 80px;
+    }
+    99%{
+        height: 150px;
+    }
+    100%{
+        height: 10px;
+    }
+}
+
+@keyframes descent2 {
+    0%{
+        height: 10px;
+    }
+    50%{
+        height : 150px;
+    }
+    99%{
+        height: 150px;
+    }
+    100%{
+        height: 10px;
+    }
 }
 
 .door_background {
@@ -143,7 +179,7 @@ body
     position: absolute;
     left: 50%;
     top: 0;
-    animation: door_right calc(var(--duration)/10) linear infinite;
+    animation: door_right calc(var(--duration)) linear infinite;
     transform: translateZ(0);
     transform-origin: 100% 100%;
     width: 50px;
@@ -157,7 +193,7 @@ body
     left: 0;
     position: absolute;
     top: 0;
-    animation: door_left calc(var(--duration)/10) linear infinite;
+    animation: door_left calc(var(--duration)) linear infinite;
     transform: translateZ(0);
     transform-origin: 0% 0%;
     width: 50px;
@@ -235,7 +271,7 @@ body
     width: 100px;
     border-radius: 8%;
     transform: translateZ(0);
-    animation: bird1 calc(var(--duration)/10) linear infinite;
+    animation: bird1 calc(var(--duration)) linear infinite;
 }
 
 @keyframes bird1{
@@ -274,7 +310,7 @@ body
     border-radius: 8%;
     z-index: 1;
     transform: translateZ(0);
-    animation: bird calc(var(--duration)/10) linear infinite;
+    animation: bird calc(var(--duration)) linear infinite;
     opacity:0 ;
 }
 
