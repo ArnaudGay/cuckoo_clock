@@ -123,9 +123,9 @@ body
 .wire_left {
     content: '';
     width: 5px;
-    height: px;
+    height: 10px;
     background: black;
-    animation: descent1 calc(var(--duration)*120) linear infinite;
+    animation: weight_left calc(var(--duration)*120) linear infinite;
 }
 
 .weight_left {
@@ -142,7 +142,7 @@ body
     width: 5px;
     height: 10px;
     background: black;
-    animation: descent2 calc(var(--duration)*120) linear infinite;
+    animation: weight_right calc(var(--duration)*120) linear infinite;
 }
 
 .weight_right {
@@ -315,7 +315,7 @@ body
 /* Descentes des poids de l'horloge */
 /* Poids de gauche */
 
-@keyframes descent1 {
+@keyframes weight_left {
     0%{
         height: 10px;
     }
@@ -332,7 +332,7 @@ body
 
 /* Poids de droite */
 
-@keyframes descent2 {
+@keyframes weight_right {
     0%{
         height: 10px;
     }
