@@ -143,7 +143,7 @@ body
     position: absolute;
     left: 50%;
     top: 0;
-    animation: door_right 6s linear infinite;
+    animation: door_right calc(var(--duration)/10) linear infinite;
     transform: translateZ(0);
     transform-origin: 100% 100%;
     width: 50px;
@@ -157,7 +157,7 @@ body
     left: 0;
     position: absolute;
     top: 0;
-    animation: door_left 6s linear infinite;
+    animation: door_left calc(var(--duration)/10) linear infinite;
     transform: translateZ(0);
     transform-origin: 0% 0%;
     width: 50px;
@@ -235,10 +235,10 @@ body
     width: 100px;
     border-radius: 8%;
     transform: translateZ(0);
-    animation: bird1 6s linear infinite;
+    animation: bird1 calc(var(--duration)/10) linear infinite;
 }
 
-@keyframes bird1 {
+@keyframes bird1{
     18% {
         transform: translateZ(0) scaleY(0.5) scaleX(0.5);
 
@@ -274,7 +274,7 @@ body
     border-radius: 8%;
     z-index: 1;
     transform: translateZ(0);
-    animation: bird 6s linear infinite;
+    animation: bird calc(var(--duration)/10) linear infinite;
     opacity:0 ;
 }
 
