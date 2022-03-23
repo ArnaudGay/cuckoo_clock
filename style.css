@@ -68,7 +68,20 @@ body
     background: black;
     z-index:2;
     transform:translate(-50%, -50%);
-    box-shadow: 60px 60px 0 0 black, -60px 60px 0 0 black, 0 120px 0 0 black;
+    box-shadow:0 120px 0 0 black;
+}
+
+.tiret_horizontal{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 8px;
+    height: 2px;
+    background: black;
+    z-index:2;
+    transform:translate(-50%, -50%);
+    box-shadow: 120px 0 0 0 black;
 }
 
 @keyframes spin{
