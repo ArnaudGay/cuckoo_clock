@@ -2,4 +2,4 @@ const audio = new Audio("missjirachi_coucou.mp3");
 
 setInterval(() => {
     audio.play();
-},7400)
+},6000)
