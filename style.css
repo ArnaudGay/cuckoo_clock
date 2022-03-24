@@ -9,7 +9,7 @@ body
 
 /* forme de la pendule */
 
-.roof_coffer {
+#roof_coffer {
     transform: translate(-50%, -50%);
     border-left: 145px solid transparent;
     border-right: 145px solid transparent;
@@ -20,7 +20,7 @@ body
     top: 120px;
 }
 
-.roof {
+#roof {
     height: 0;
     width: 0;
     border-left: 170px solid transparent;
@@ -29,7 +29,7 @@ body
     z-index: -2;
 }
 
-.coffer {
+#coffer {
     height: 300px;
     width: 300px;
     background-color: #d2691e;
@@ -41,7 +41,7 @@ body
 
 /* Cadran de l'horloge */
 
-.dial {
+#dial {
     position: relative;
     width: 150px;
     height: 150px;
@@ -53,7 +53,7 @@ body
     box-shadow: inset 0px 0px 15px black;
 }
 
-.dial::before {
+#dial::before {
     content: '';
     height: 50px;
     width: 5px;
@@ -66,7 +66,7 @@ body
     transform-origin: top;
 }
 
-.dial::after {
+#dial::after {
     content: '';
     height: 30px;
     width: 5px;
@@ -79,7 +79,7 @@ body
     transform-origin: top;
 }
 
-.dial_container::before {
+#dial_container::before {
     content: '';
     width: 14px;
     height: 14px;
@@ -92,7 +92,7 @@ body
     top: 50%;
 }
 
-.dial_container::after {
+#dial_container::after {
     content: '';
     position: absolute;
     top: 10%;
@@ -105,7 +105,7 @@ body
     box-shadow:0 120px 0 0 black;
 }
 
-.decorating_dial {
+#decorating_dial {
     content: '';
     position: absolute;
     top: 50%;
@@ -120,7 +120,7 @@ body
 
 /* Poids de l'horloge */
 
-.wire_left {
+#wire_left {
     content: '';
     width: 5px;
     height: 10px;
@@ -128,7 +128,7 @@ body
     animation: weight_left calc(var(--duration)*120) linear infinite;
 }
 
-.weight_left {
+#weight_left {
     background: black;
     height: 100px;
     width: 35px;
@@ -137,7 +137,7 @@ body
     top: -1px;
 }
 
-.wire_right {
+#wire_right {
     content: '';
     width: 5px;
     height: 10px;
@@ -145,7 +145,7 @@ body
     animation: weight_right calc(var(--duration)*120) linear infinite;
 }
 
-.weight_right {
+#weight_right {
     background: black;
     height: 70px;
     width: 30px;
@@ -156,7 +156,7 @@ body
 
 /* Porte du coucou */
 
-.door_background {
+#door_background {
     background-color: #000000;
     border-radius: 8%;
     height: 100px;
@@ -168,7 +168,7 @@ body
     top: 65px;
 }
 
-.door_right {
+#door_right {
     background-color: #C5A48A;
     content: "";
     border-radius: 5%;
@@ -182,7 +182,7 @@ body
     width: 50px;
 }
 
-.door_left {
+#door_left {
     background-color: #C5A48A;
     border-radius: 5%;
     content: "";
@@ -198,7 +198,7 @@ body
 
 /* Le coucou */
 
-.bird {
+#bird {
     position: absolute;
     height: 100px;
     width: 100px;
@@ -207,7 +207,7 @@ body
     animation: bird calc(var(--duration)) linear infinite;
 }
 
-.wing_bird {
+#wing_bird {
     position: absolute;
     height: 100px;
     width: 100px;
@@ -363,7 +363,7 @@ body
 
 /* Flex des poids par rapport à leur support*/
 
-.weights {
+#weights {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -372,7 +372,7 @@ body
 
 /* Flex du carré et du trinagle formant l'horloge */
 
-.horloge {
+#horloge {
     display: flex;
     flex-direction: column;
     align-items: center;
