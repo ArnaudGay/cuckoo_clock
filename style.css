@@ -7,13 +7,13 @@ body
     background-image:url(wallpaper.png);
 }
 
-/* forme de la pendule */
+/* Forme de la pendule */
 
 #roof_coffer {
     transform: translate(-50%, -50%);
     border-left: 145px solid transparent;
     border-right: 145px solid transparent;
-    border-bottom: 175px solid #d2691e;
+    border-bottom: 175px solid #74411d;
     stroke:#6B360F;
     z-index: -2;
     position: relative;
@@ -25,17 +25,17 @@ body
     width: 0;
     border-left: 170px solid transparent;
     border-right: 170px solid transparent;
-    border-bottom: 200px solid #6B360F;
+    border-bottom: 200px solid #3f2009;
     z-index: -2;
 }
 
 #coffer {
     height: 300px;
     width: 300px;
-    background-color: #d2691e;
-    border-bottom: solid 8px #6B360F;
-    border-left: solid 8px #6B360F;
-    border-right: solid 8px #6B360F;
+    background-color: #74411d;
+    border-bottom: solid 8px #3f2009;
+    border-left: solid 8px #3f2009;
+    border-right: solid 8px #3f2009;
     z-index: -1;
 }
 
@@ -45,9 +45,9 @@ body
     position: relative;
     width: 150px;
     height: 150px;
-    border: 11px solid #ac4d00;
+    border: 11px solid #3f2009;
     border-radius: 100px;
-    background: #fefbf2;
+    background: #fdf6e1;
     top: 64px;
     left: 64px;
     box-shadow: inset 0px 0px 15px black;
@@ -84,7 +84,7 @@ body
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #ac4d00;
+    background: #8F4914;
     z-index : 2;
     transform: translate(-50%, -50%);
     position: absolute;
@@ -215,7 +215,7 @@ body
 }
 
 #door_right {
-    background-color: #C5A48A;
+    background-color: #3f2009;
     content: "";
     border-radius: 5%;
     height: 100px;
@@ -229,7 +229,7 @@ body
 }
 
 #door_left {
-    background-color: #C5A48A;
+    background-color: #3f2009;
     border-radius: 5%;
     content: "";
     height: 100px;
@@ -258,7 +258,6 @@ body
 }
 
 /* Porte de gauche*/
-
 
 @keyframes door_left {
     0%{
