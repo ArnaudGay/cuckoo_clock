@@ -75,7 +75,7 @@ body
     top: 50%;
     left: calc(50% - 2px);
     border-radius: 50px;
-    animation: spin calc(var(--duration)*60) linear infinite;
+    animation: spin calc(var(--duration)*12) linear infinite;
     transform-origin: top;
 }
 
@@ -118,6 +118,17 @@ body
     box-shadow: 120px 0 0 0 black;
 }
 
+/* Rotation des aiguilles */
+
+@keyframes spin {
+    0% {
+        transform: rotate(-180deg)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
+}
+
 /* Poids de l'horloge */
 
 #wire_left {
@@ -125,7 +136,7 @@ body
     width: 5px;
     height: 10px;
     background: black;
-    animation: weight_left calc(var(--duration)*120) linear infinite;
+    animation: weight_left calc(var(--duration)*24) linear infinite;
 }
 
 #weight_left {
@@ -142,7 +153,7 @@ body
     width: 5px;
     height: 10px;
     background: black;
-    animation: weight_right calc(var(--duration)*120) linear infinite;
+    animation: weight_right calc(var(--duration)*24) linear infinite;
 }
 
 #weight_right {
@@ -152,6 +163,41 @@ body
     border-radius: 50%;
     position: relative;
     top: -1px;
+}
+
+/* Descente des poids de l'horloge */
+/* Poids de gauche */
+
+@keyframes weight_left {
+    0%{
+        height: 10px;
+    }
+    50%{
+        height : 80px;
+    }
+    99%{
+        height: 150px;
+    }
+    100%{
+        height: 10px;
+    }
+}
+
+/* Poids de droite */
+
+@keyframes weight_right {
+    0%{
+        height: 10px;
+    }
+    50%{
+        height : 150px;
+    }
+    99%{
+        height: 150px;
+    }
+    100%{
+        height: 10px;
+    }
 }
 
 /* Porte du coucou */
@@ -196,6 +242,36 @@ body
     width: 50px;
 }
 
+/* Ouverture des portes du coucou */
+/* Porte de droite*/
+
+@keyframes door_right {
+    0% {
+        transform: translateZ(0) rotateY(0deg);
+    }
+    5% {
+        transform: translateZ(0) rotateY(90deg);
+    }
+    10% {
+        transform: translateZ(0) rotateY(0deg);
+    }
+}
+
+/* Porte de gauche*/
+
+
+@keyframes door_left {
+    0%{
+        transform :translateZ(0) rotateY(0deg);
+    }
+    5% {
+        transform : translateZ(0) rotateY(-90deg);
+    }
+    10% {
+        transform : translateZ(0) rotateY(0deg);
+    }
+}
+
 /* Le coucou */
 
 #bird {
@@ -216,18 +292,6 @@ body
     transform: translateZ(0);
     animation: wing_bird calc(var(--duration)) linear infinite;
     opacity:0 ;
-}
-
-/* Les KeyFrames */
-/* Rotation des aiguilles */
-
-@keyframes spin {
-    0% {
-        transform: rotate(-180deg)
-    }
-    100% {
-        transform: rotate(180deg)
-    }
 }
 
 /* Apparition du coucou */
@@ -286,71 +350,6 @@ body
     }
 }
 
-/* Ouverture des portes du coucou */
-/* Porte de droite*/
-
-@keyframes door_right {
-    0% {
-        transform: translateZ(0) rotateY(0deg);
-    }
-    5% {
-        transform: translateZ(0) rotateY(90deg);
-    }
-    10% {
-        transform: translateZ(0) rotateY(0deg);
-    }
-}
-
-/* Porte de gauche*/
-
-
-@keyframes door_left {
-    0%{
-        transform :translateZ(0) rotateY(0deg);
-    }
-    5% {
-        transform : translateZ(0) rotateY(-90deg);
-    }
-    10% {
-        transform : translateZ(0) rotateY(0deg);
-    }
-}
-
-/* Descente des poids de l'horloge */
-/* Poids de gauche */
-
-@keyframes weight_left {
-    0%{
-        height: 10px;
-    }
-    50%{
-        height : 80px;
-    }
-    99%{
-        height: 150px;
-    }
-    100%{
-        height: 10px;
-    }
-}
-
-/* Poids de droite */
-
-@keyframes weight_right {
-    0%{
-        height: 10px;
-    }
-    50%{
-        height : 150px;
-    }
-    99%{
-        height: 150px;
-    }
-    100%{
-        height: 10px;
-    }
-}
-
 /* Flex */
 /* Flex des poids et de leur fil */
 
@@ -370,7 +369,7 @@ body
     width: 300px;
 }
 
-/* Flex du carré et du trinagle formant l'horloge */
+/* Flex du carré et du triangle formant l'horloge */
 
 #horloge {
     display: flex;
