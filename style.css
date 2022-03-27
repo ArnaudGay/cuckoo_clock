@@ -4,7 +4,8 @@
 
 body
 {
-    background-image:url(wallpaper.png);
+    background-image:url(wallpaper.jpg);
+    background-size: cover;
 }
 
 /* Forme de la pendule */
