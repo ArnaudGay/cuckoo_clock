@@ -370,7 +370,7 @@ body
 
 /* Flex du carré et du triangle formant l'horloge */
 
-#horloge {
+#clock {
     display: flex;
     flex-direction: column;
     align-items: center;
