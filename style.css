@@ -54,6 +54,8 @@ body
     box-shadow: inset 0px 0px 15px black;
 }
 
+/* Aiguilles indiquant les minutes */
+
 #dial::before {
     content: '';
     height: 50px;
@@ -66,6 +68,9 @@ body
     animation: spin var(--duration) linear infinite;
     transform-origin: top;
 }
+
+ 
+/* Aiguille indiquant les heures */
 
 #dial::after {
     content: '';
