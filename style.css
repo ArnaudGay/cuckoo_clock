@@ -57,7 +57,7 @@ body
     content: '';
     height: 50px;
     width: 5px;
-    background: black;
+    background: #87868c;
     position: absolute;
     top: 50%;
     left: calc(50% - 2px);
@@ -70,7 +70,7 @@ body
     content: '';
     height: 30px;
     width: 5px;
-    background: black;
+    background: #87868c;
     position: absolute;
     top: 50%;
     left: calc(50% - 2px);
@@ -140,7 +140,7 @@ body
 }
 
 #weight_left {
-    background: black;
+    background: #87868c ;
     height: 100px;
     width: 35px;
     border-radius: 50%;
@@ -157,7 +157,7 @@ body
 }
 
 #weight_right {
-    background: black;
+    background: #87868c;
     height: 70px;
     width: 30px;
     border-radius: 50%;
